@@ -14,7 +14,7 @@ if [ ! -f "models/digits_mlp.pth" ]; then
     exit 1
 fi
 
-"$PY" <<'PYEOF'
+$PY <<'PYEOF'
 import json
 nb = json.load(open('scripts/count.ipynb'))
 code = '\n'.join(''.join(c['source']) for c in nb['cells'] if c['cell_type']=='code')
