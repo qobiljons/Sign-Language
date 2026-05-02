@@ -87,8 +87,9 @@ $PY -m pip install --upgrade pip --quiet
 $PY -m pip install --quiet $PIP_FLAGS \
     "numpy<2" "protobuf<5" \
     "mediapipe==0.10.14" \
-    "opencv-python" "torch"
-$PY -c "import mediapipe, cv2, torch, numpy; print('deps OK')"
+    "opencv-python" "torch" \
+    "imageio-ffmpeg"
+$PY -c "import mediapipe, cv2, torch, numpy, imageio_ffmpeg; print('deps OK')"
 
 say "3/4  Dataset"
 if [ -d "data/numbers/0" ] && [ "$(ls -1 data/numbers/0 2>/dev/null | wc -l)" -gt 10 ]; then
